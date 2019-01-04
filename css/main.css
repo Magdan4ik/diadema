@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:before, *:after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: 'CG-Bold';
+  src: url("/fonts/CenturyGothic-Bold.woff") format("woff");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'CG-Regular';
+  src: url("/fonts/CenturyGothic.woff") format("woff");
+  font-weight: normal;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  font-size: 16px;
+  min-width: 320px;
+  position: relative;
+  line-height: 1.65;
+  color: var(--main-color);
+  font-family: var(--main-font);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  border-left: 1px solid red;
+  border-right: 1px solid red;
+}
+
+.htmlmap__d {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 70px 30px;
+  list-style: none;
+}
+
+.htmlmap__d li a {
+  min-height: 60px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #2f292b;
+  line-height: 1.2;
+  border: 1px solid #e8c1c2;
+  text-decoration: none;
+}
+
+.htmlmap__d > li > a {
+  padding: 10px 20px;
+  width: 100%;
+  font-family: "CG-Bold";
+  font-size: 16px;
+}
+
+.htmlmap__dd {
+  position: relative;
+  display: inline-grid;
+  grid-row-gap: 30px;
+  list-style: none;
+  padding-left: 60px;
+  padding-top: 50px;
+}
+
+.htmlmap__dd::before {
+  content: "";
+  position: absolute;
+  background: #e8c1c2;
+  left: 30px;
+  top: 0;
+  bottom: 30px;
+  width: 1px;
+}
+
+.htmlmap__dd > li {
+  position: relative;
+}
+
+.htmlmap__dd > li::before {
+  content: "";
+  position: absolute;
+  background: #e8c1c2;
+  top: 50%;
+  left: -30px;
+  width: 30px;
+  height: 1px;
+}
+
+.htmlmap__dd > li > a {
+  width: 180px;
+  padding: 10px 6px;
+  font-family: "CG-Regular";
+  font-size: 14px;
+}
+
+.htmlmap__dd > li > a:hover {
+  background: #e8c1c2;
+  color: #fff;
+}
+
+/*==========  Desktop First  ==========*/
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px) {
+  .htmlmap__d {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small Devices, Phones */
+@media only screen and (max-width: 600px) {
+  .htmlmap__d {
+    grid-template-columns: 1fr;
+  }
+}
