@@ -2,104 +2,108 @@
 <html lang="ru">
 	<head>
 		<meta charset="utf-8">
-		<title>Diadema HTML Map</title>
+		<title>Diadema New Order</title>
 		<meta name="description" content="">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="css/autocomplete.css">
 		<link rel="stylesheet" href="css/main.css">
+		<script src="js/autocomplete.js" ></script>
+		<script src="js/scripts.js" ></script>
 	</head>
 
 	<body>
 		<div class="container">
-			<section class="htmlmap">
-				<ol class="htmlmap__d">
-					<li>
-						<a href="#">Серебряные / Золотые кольца</a>
-						<ul class="htmlmap__dd">
-							<li><a href="">Кольца с бриллиантами</a></li>
-							<li><a href="">Кольца с полудрагоценными камнями</a></li>
-							<li><a href="">Кольца с цирконием</a></li>
-							<li><a href="">Кольца с жемчугом</a></li>
-							<li><a href="">Тонкие кольца</a></li>
-							<li><a href="">Широкие кольца</a></li>
-							<li><a href="">Фаланговые кольца</a></li>
-							<li><a href="">Обручальные кольца</a></li>
-							<li><a href="">Помолвочные кольца (Для предложения)</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Серебряные / Золотые серьги (Сережки)</a>
-						<ul class="htmlmap__dd">
-							<li><a href="">Серьги с бриллиантами</a></li>
-							<li><a href="">Серьги с Камнями</a></li>
-							<li><a href="">Серьги с полудрагоценными камнями</a></li>
-							<li><a href="">Серьги с жемчугом</a></li>
-							<li><a href="">Серьги с цирконием</a></li>
-							<li><a href="">Серьги кольца (Конго)</a></li>
-							<li><a href="">Серьги подвески</a></li>
-							<li><a href="">Дестские серьги (Сережки)</a></li>
-							<li><a href="">Серьги гвоздики (Пусеты)</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Золотые цепочки</a>
-						<ul class="htmlmap__dd">
-							<li><a href="">Женские цепочки</a></li>
-							<li><a href="">Мужские цепочки</a></li>
-							<li><a href="">Детские Золотые</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Золотые Подвески и Кулоны</a>
-						<ul class="htmlmap__dd">
-							<li><a href="">Подвески-Иконки</a></li>
-							<li><a href="">Золотые Ладанки</a></li>
-							<li><a href="">Подвески с бриллиантами</a></li>
-							<li><a href="">Подвески с камнями</a></li>
-							<li><a href="">Подвески с буквами</a></li>
-							<li><a href="">Подвески с полудрагоценными камнями</a></li>
-							<li><a href="">Кулоны сердце</a></li>
-							<li><a href="">Подвески без вставок</a></li>
-							<li><a href="">Подвески с цирконием</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Серебряные/Золотые браслеты</a>
-						<ul class="htmlmap__dd">
-							<li><a href="">Золотые браслеты на руку</a></li>
-							<li><a href="">Браслеты с камнями</a></li>
-							<li><a href="">Женские браслеты</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Женские и мужские аксессуары</a>
-						<ul class="htmlmap__dd">
-							<li><a href="">Запонки</a></li>
-							<li><a href="">Золотые булавки и заколки</a></li>
-							<li><a href="">Кольца и серьги для пирсинга</a></li>
-							<li><a href="">Золотая брошь</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Крестики</a>
-						<ul class="htmlmap__dd">
-							<li><a href="">Мужские крестики</a></li>
-							<li><a href="">Крестик для ребенка (на Крестины)</a></li>
-							<li><a href="">Крестики католические</a></li>
-							<li><a href="">Крестики православные</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="#">Золотые колье (на шею)</a>
-						<ul class="htmlmap__dd">
-							<li><a href="">Колье именное</a></li>
-							<li><a href="">Колье с драгоценными камнями</a></li>
-						</ul>
-					</li>
 
-				</ol>
-				
-			</section>	
+			<div class="order">
+				<div class="order__inner">
+					<h1 class="order__title">Оформлення замовлення</h1>
+					<form action="#" class="order__form">
+						<div class="order__blocks">
+							<div class="order__block">
+								<div class="order__login">
+									<p>Вже замовляли у нас? <a href="#login">Натисніть сюди, щоб увійти</a></p>
+								</div>
 
+								<div class="order__steps">
+									<div class="order__step">
+										<div class="order__step-title">Деталі оплати</div>
+										<div class="order__payinfo">
+											<label class="order__label">
+												<p>Адреса електроної пошти<sup>*</sup></p>
+												<input class="order__input-text" type="text" name="order-email" placeholder="Сюди відправимо всю інформацію про замовлення">
+											</label>
+											<label class="order__label">
+												<p>Телефон<sup>*</sup></p>
+												<input class="order__input-text" type="tel" name="order-tel" placeholder="+38 (ХХ) ХХХ-ХХХ-ХХ">
+											</label>
+											<label class="order__label">
+												<p>І’мя<sup>*</sup></p>
+												<input class="order__input-text" name="order-name" type="text">
+											</label>
+											<label class="order__label">
+												<p>Прізвище<sup>*</sup></p>
+												<input class="order__input-text" name="order-sname" type="text">
+											</label>
+										</div>
+									</div>
+									<div class="order__step">
+										<div class="order__step-title">Спосіб оплати</div>
+										<div class="order__paymethod">
+											<label class="order__label-radio"><input type="radio" name="order-paymethod" class="order__input-radio"> <p>Готівкою</p></label>
+											<label class="order__label-radio"><input type="radio" name="order-paymethod" class="order__input-radio"> <p>Оплата на карту</p></label>
+										</div>
+									</div>
+									<div class="order__step">
+										<div class="order__step-title">Як доставити?</div>
+										<div class="order__delivery">
+											<label class="order__label-radio" for="o-courier">
+												<input type="radio" name="order-delivery" class="order__input-radio" id="o-courier"> <p>Кур`єром (Нова Пошта)</p>
+												<div class="order__hint">
+													11111
+												</div>
+											</label>
+											<label class="order__label-radio" for="o-shop">
+												<input type="radio" name="order-delivery" class="order__input-radio" id="o-shop"> <p>Забрати з магазина</p>
+											</label>
+											<label class="order__label-radio" for="o-department">
+												<input checked type="radio" name="order-delivery" class="order__input-radio" id="o-department"> <p>Відділення (Нова Пошта)</p>
+												<div class="order__hint">
+													<div class="order__hint-fields">
+														<div class="order__hint-field">
+															<p class="order__hint-title">Ваше місто</p>
+															<input type="text" class="order__hint-input" data-autocomplete="city">
+														</div>
+														<div class="order__hint-field" hidden>
+															<p class="order__hint-title">Номер відділення Нової Пошти</p>
+															<input type="text"  class="order__hint-select" type="text" data-autocomplete="dep" data-opened="false" readonly>
+															<ul class="order__newselect" data-autocomplete="deplist" data-visible="false"><!-- js fetching --> </ul>
+															<div class="order__hint-depart"><!-- js inserting --></div>
+														</div>
+													</div>
+													<div class="order__hint-seldep">
+
+													</div>
+												</div>
+											</label>
+
+										</div>
+									</div>
+								</div>
+
+								<div class="order__actions">
+									<label class="order__action-confirm">
+										<input type="checkbox" class="order__input-checkbox">
+										<p>Нажимая на кнопку, я принимаю условия соглашения.</p>
+									</label>
+									<button type="submit" class="order__action-submit">Оформити замовлення</button>
+								</div>
+
+							</div>
+							<div class="order__block">222</div>
+						</div>
+					</form>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
