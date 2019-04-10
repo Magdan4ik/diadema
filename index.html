@@ -8,12 +8,13 @@
 		<link rel="stylesheet" href="css/autocomplete.css">
 		<link rel="stylesheet" href="css/main.css">
 		<script src="js/autocomplete.js" ></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/imask/4.1.5/imask.min.js" defer></script>
 		<script src="js/scripts.js" ></script>
 	</head>
 
 	<body>
 		<div class="container">
-
+			<!-- //START ORDER -->
 			<div class="order">
 				<div class="order__inner">
 					<h1 class="order__title">Оформлення замовлення</h1>
@@ -30,43 +31,73 @@
 										<div class="order__payinfo">
 											<label class="order__label">
 												<p>Адреса електроної пошти<sup>*</sup></p>
-												<input class="order__input-text" type="text" name="order-email" placeholder="Сюди відправимо всю інформацію про замовлення">
+												<input class="order__input-text" type="email" name="order-email" placeholder="Сюди відправимо всю інформацію про замовлення" required>
 											</label>
 											<label class="order__label">
 												<p>Телефон<sup>*</sup></p>
-												<input class="order__input-text" type="tel" name="order-tel" placeholder="+38 (ХХ) ХХХ-ХХХ-ХХ">
+												<input class="order__input-text" type="tel" name="order-tel" placeholder="+38 (XХХ) ХХ-ХХХ-ХХ" required>
 											</label>
 											<label class="order__label">
 												<p>І’мя<sup>*</sup></p>
-												<input class="order__input-text" name="order-name" type="text">
+												<input class="order__input-text" name="order-name" type="text" required>
 											</label>
 											<label class="order__label">
 												<p>Прізвище<sup>*</sup></p>
-												<input class="order__input-text" name="order-sname" type="text">
+												<input class="order__input-text" name="order-sname" type="text" required>
 											</label>
 										</div>
 									</div>
 									<div class="order__step">
 										<div class="order__step-title">Спосіб оплати</div>
 										<div class="order__paymethod">
-											<label class="order__label-radio"><input type="radio" name="order-paymethod" class="order__input-radio"> <p>Готівкою</p></label>
-											<label class="order__label-radio"><input type="radio" name="order-paymethod" class="order__input-radio"> <p>Оплата на карту</p></label>
+											<label class="order__label-radio"><input type="radio" name="order-paymethod" class="order__input-radio" required> <p>Готівкою</p></label>
+											<label class="order__label-radio"><input type="radio" name="order-paymethod" class="order__input-radio" required> <p>Оплата на карту</p></label>
 										</div>
 									</div>
 									<div class="order__step">
 										<div class="order__step-title">Як доставити?</div>
 										<div class="order__delivery">
 											<label class="order__label-radio" for="o-courier">
-												<input type="radio" name="order-delivery" class="order__input-radio" id="o-courier"> <p>Кур`єром (Нова Пошта)</p>
+												<input type="radio" name="order-delivery" class="order__input-radio" id="o-courier" required> <p>Кур`єром (Нова Пошта)</p>
 												<div class="order__hint">
-													11111
+													<div class="order__hint-fields">
+														<div class="order__hint-field">
+															<p class="order__hint-title">Ваше місто</p>
+															<input type="text" class="order__hint-input" data-autocomplete="city">
+														</div>
+														<div class="order__hint-field">
+															<p class="order__hint-title">Вулиця</p>
+															<input type="text" class="order__hint-input">
+														</div>
+														<div class="order__hint-field">
+															<p class="order__hint-title">Будинок</p>
+															<input type="text" class="order__hint-input">
+														</div>
+														<div class="order__hint-field">
+															<p class="order__hint-title">Квартира</p>
+															<input type="text" class="order__hint-input">
+														</div>
+														<div class="order__hint-field">
+															<p class="order__hint-title">Ваш коментар</p>
+															<textarea class="order__hint-textarea"></textarea>
+														</div>
+													</div>
 												</div>
 											</label>
 											<label class="order__label-radio" for="o-shop">
-												<input type="radio" name="order-delivery" class="order__input-radio" id="o-shop"> <p>Забрати з магазина</p>
+												<input type="radio" name="order-delivery" class="order__input-radio" id="o-shop" required> <p>Забрати з магазина</p>
+												<div class="order__hint">
+													<div class="order__hint-fields">
+														<div class="order__hint-field">
+															<input type="text" class="order__hint-select" data-autocomplete="shops-input" data-opened="false" readonly>
+															<ul class="order__newselect"  data-autocomplete="shops-list" data-visible="false"><!-- js inserting --> </ul>
+															<div class="order__hint-worktime"><!-- js inserting --></div>
+														</div>
+													</div>
+												</div>
 											</label>
 											<label class="order__label-radio" for="o-department">
-												<input checked type="radio" name="order-delivery" class="order__input-radio" id="o-department"> <p>Відділення (Нова Пошта)</p>
+												<input type="radio" name="order-delivery" class="order__input-radio" id="o-department" required> <p>Відділення (Нова Пошта)</p>
 												<div class="order__hint">
 													<div class="order__hint-fields">
 														<div class="order__hint-field">
@@ -75,13 +106,10 @@
 														</div>
 														<div class="order__hint-field" hidden>
 															<p class="order__hint-title">Номер відділення Нової Пошти</p>
-															<input type="text"  class="order__hint-select" type="text" data-autocomplete="dep" data-opened="false" readonly>
+															<input type="text" class="order__hint-select" type="text" data-autocomplete="dep" data-opened="false" readonly>
 															<ul class="order__newselect" data-autocomplete="deplist" data-visible="false"><!-- js fetching --> </ul>
 															<div class="order__hint-depart"><!-- js inserting --></div>
 														</div>
-													</div>
-													<div class="order__hint-seldep">
-
 													</div>
 												</div>
 											</label>
@@ -89,20 +117,106 @@
 										</div>
 									</div>
 								</div>
-
 								<div class="order__actions">
 									<label class="order__action-confirm">
-										<input type="checkbox" class="order__input-checkbox">
+										<input type="checkbox" class="order__input-checkbox" required>
 										<p>Нажимая на кнопку, я принимаю условия соглашения.</p>
 									</label>
 									<button type="submit" class="order__action-submit">Оформити замовлення</button>
 								</div>
-
 							</div>
-							<div class="order__block">222</div>
+
+							<div class="order__block order__block--purchases">
+								<div class="purchases">
+									<div class="purchases__head">
+										<div class="purchases__head-title">Ваші покупки</div>
+										<div class="purchases__head-info">
+											<span class="purchases__head-total" id="head-total"><i>2</i> товара на сумму <b>4 021 грн</b></span>
+											<input class="purchases__head-promo" id="promocode" type="text" placeholder="Введіть промокод і отримайте знижку!">
+										</div>
+									</div>
+										<ul class="purchases__list">
+											<li class="purchases__item">
+												<figure><img src="/img/item-1.jpg" alt=""></figure>
+												<div class="purchases__item-body">
+													<div class="purchases__item-head">
+														<div class="purchases__item-name">Серебряные серьги с кубическим цирконием 7026391-48-2</div>
+														<div class="purchases__item-quantity">
+															<input class="purchases__item-quantity-input" type="text" value="1">
+															<button class="purchases__item-quantity-minus" type="button" onclick="minusQuantity(this)">+</button>
+															<button class="purchases__item-quantity-plus" type="button" onclick="plusQuantity(this)">-</button>
+														</div>
+													</div>
+													<div class="purchases__item-footer">
+														<ul class="purchases__item-properties">
+															<li><span>Вага:</span><span>4.1</span></li>
+														</ul>
+														<div class="purchases__item-price"><span>697 грн</span></div>
+														<div class="purchases__item-profit">
+															<p class="purchases__item-oldprice">1 072 грн</p>
+															<p class="purchases__item-discount">знижка <i>-35%</i></p>
+														</div>
+													</div>
+												</div>
+												<div class="purchases__item-remove">
+													<button class="purchases__item-remove-btn" type="button">X</button>
+												</div>
+											</li>
+											<li class="purchases__item">
+												<figure><img src="/img/item-2.jpg" alt=""></figure>
+												<div class="purchases__item-body">
+													<div class="purchases__item-head">
+														<div class="purchases__item-name">Серебряные серьги с кубическим цирконием 7026391-48-2</div>
+														<div class="purchases__item-quantity">
+															<input class="purchases__item-quantity-input" type="text" value="1">
+															<button class="purchases__item-quantity-minus" type="button" onclick="minusQuantity(this)">+</button>
+															<button class="purchases__item-quantity-plus" type="button" onclick="plusQuantity(this)">-</button>
+														</div>
+													</div>
+													<div class="purchases__item-footer">
+														<ul class="purchases__item-properties">
+															<li><span>Розмір:</span><span>15.5</span></li>
+															<li><span>Вага:</span><span>4.1</span></li>
+															<li><span>Вставка:</span><span>С кубическим цирконием</span></li>
+														</ul>
+														<div class="purchases__item-price"><span>3 324 грн</span></div>
+														<div class="purchases__item-profit">
+															<p class="purchases__item-oldprice">1 072 грн</p>
+															<p class="purchases__item-discount">знижка <i>-35%</i></p>
+														</div>
+													</div>
+												</div>
+												<div class="purchases__item-remove">
+													<button class="purchases__item-remove-btn" type="button">X</button>
+												</div>
+											</li>
+										</ul>
+										<div class="purchases__total">
+											<div class="purchases__total-inner">
+												<ul class="purchases__total-list">
+													<li class="purchases__total-summ">
+														<span>Сумма замовлення</span>
+														<span>4 021 грн.</span>
+													</li>
+													<li class="purchases__total-discount">
+														<span>Знижка</span>
+														<span>961 грн.</span>
+													</li>
+													<li class="purchases__total-common">
+														<span>Разом</span>
+														<span>4 021 грн.</span>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 						</div>
 					</form>
 				</div>
+				<!-- //END ORDER -->
+
 			</div>
 		</div>
 	</body>
