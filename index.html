@@ -132,7 +132,7 @@
 										<div class="purchases__head-title">Ваші покупки</div>
 										<div class="purchases__head-info">
 											<span class="purchases__head-total" id="head-total"><i>2</i> товара на сумму <b>4 021 грн</b></span>
-											<input class="purchases__head-promo" id="promocode" type="text" placeholder="Введіть промокод і отримайте знижку!">
+											<input class="purchases__head-promo" id="promocode" type="text" placeholder="Введіть PROMO-КОД і отримайте знижку!">
 										</div>
 									</div>
 										<ul class="purchases__list">
@@ -143,8 +143,8 @@
 														<div class="purchases__item-name">Серебряные серьги с кубическим цирконием 7026391-48-2</div>
 														<div class="purchases__item-quantity">
 															<input class="purchases__item-quantity-input" type="text" value="1">
-															<button class="purchases__item-quantity-minus" type="button" onclick="minusQuantity(this)">+</button>
-															<button class="purchases__item-quantity-plus" type="button" onclick="plusQuantity(this)">-</button>
+															<button class="purchases__item-quantity-minus" type="button" onclick="updatePurchases()">+</button>
+															<button class="purchases__item-quantity-plus" type="button" onclick="updatePurchases()">-</button>
 														</div>
 													</div>
 													<div class="purchases__item-footer">
@@ -159,7 +159,7 @@
 													</div>
 												</div>
 												<div class="purchases__item-remove">
-													<button class="purchases__item-remove-btn" type="button">X</button>
+													<button class="purchases__item-remove-btn" type="button" onclick="removePurchase(event, this)">X</button>
 												</div>
 											</li>
 											<li class="purchases__item">
@@ -169,8 +169,8 @@
 														<div class="purchases__item-name">Серебряные серьги с кубическим цирконием 7026391-48-2</div>
 														<div class="purchases__item-quantity">
 															<input class="purchases__item-quantity-input" type="text" value="1">
-															<button class="purchases__item-quantity-minus" type="button" onclick="minusQuantity(this)">+</button>
-															<button class="purchases__item-quantity-plus" type="button" onclick="plusQuantity(this)">-</button>
+															<button class="purchases__item-quantity-minus" type="button" onclick="updatePurchases()">+</button>
+															<button class="purchases__item-quantity-plus" type="button" onclick="updatePurchases()">-</button>
 														</div>
 													</div>
 													<div class="purchases__item-footer">
@@ -187,7 +187,7 @@
 													</div>
 												</div>
 												<div class="purchases__item-remove">
-													<button class="purchases__item-remove-btn" type="button">X</button>
+													<button class="purchases__item-remove-btn" type="button" onclick="removePurchase(event, this)">X</button>
 												</div>
 											</li>
 										</ul>
@@ -196,15 +196,15 @@
 												<ul class="purchases__total-list">
 													<li class="purchases__total-summ">
 														<span>Сумма замовлення</span>
-														<span>4 021 грн.</span>
+														<span id="summ">4 021 грн.</span>
 													</li>
 													<li class="purchases__total-discount">
 														<span>Знижка</span>
-														<span>961 грн.</span>
+														<span id="discount">961 грн.</span>
 													</li>
 													<li class="purchases__total-common">
 														<span>Разом</span>
-														<span>4 021 грн.</span>
+														<span id="total">4 021 грн.</span>
 													</li>
 												</ul>
 											</div>

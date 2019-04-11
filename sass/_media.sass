@@ -1,7 +1,52 @@
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
 	.order
+		&__blocks
+			grid-template-columns: 1fr 1fr
 
-/* Small Devices, Phones */
+
+@media only screen and (max-width : 1100px)
+	.order
+		&__actions
+			grid-template-columns: 1fr
+
+@media only screen and (max-width : 992px)
+	.order
+		&__blocks
+			grid-template-columns: 1fr
+			max-width: 600px
+			margin-left: auto
+			margin-right: auto
+
 @media only screen and (max-width : 600px)
 	.order
+		&__title
+			font-size: 32px
+		&__payinfo
+			grid-template-columns: 1fr
+		&__hint
+			&-title
+				margin-bottom: 0
+	.purchases
+		&__head
+			padding: 15px
+			&-info
+				flex-wrap: wrap
+			&-promo
+				margin-top: 15px
+				padding-bottom: 5px
+		&__item
+			grid-template-columns: 80px 1fr 30px
+			&-head
+				grid-column-gap: 5px
+			&-body
+				padding-left: 6px
+			&-footer
+				grid-template-columns: 1fr
+				grid-gap: 0
+				margin-top: 10px
+			&-profit
+				text-align: left
+		&__total
+			&-inner
+				padding: 0 15px

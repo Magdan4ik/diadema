@@ -7,12 +7,21 @@ function funOrder() {
     getShops(); // Вызываем функцию получения и заполнения магазинов
     const form = document.querySelector('.order__form');
     const inputs = {
-        tel : document.querySelector('input[name="order-tel"]')
+        tel      : document.querySelector('input[name="order-tel"]'),
+        quantity : document.querySelectorAll('.purchases__item-quantity-input')
     };
     const telOptions = {
         mask: '+{38}(000)00-000-00'
     };
-    const telMask   = new IMask(inputs.tel, telOptions); //Маска телефона
+    const quantOptions = {
+        mask: Number,
+        min: 1,
+        max: 1000
+    };
+
+    new IMask(inputs.tel, telOptions); //Маска телефона
+
+    inputs.quantity.forEach(inp => new IMask(inp, quantOptions));
 
     form.addEventListener('submit', e => sendOrderForm(e));
 }
@@ -201,9 +210,22 @@ function selectedDep(inp) {
     });
 };
 
+function updatePurchases() {
+    alert('Обновить');
+};
 
 function sendOrderForm(event) {
     event.preventDefault();
     alert('Отправка формы');
     // here fetch with sending form
+};
+
+
+function removePurchase(event, btn) {
+    event.preventDefault();
+    if(confirm("Удалить?")) {
+       btn.closest('.purchases__item').remove();
+       // here fetch with update pururchases
+    }
 }
+

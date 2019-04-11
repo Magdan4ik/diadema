@@ -75,6 +75,8 @@ body
 	outline: none
 	border: 1px solid #c9a7a8
 	transition: 0.2s
+	&:focus
+		border-color: #c35656
 
 .order__input-checkbox
 	border-radius: 2px
@@ -244,6 +246,7 @@ body
 				display: block
 				background: no-repeat 100% 50%/11px
 				user-select: none
+				padding-right: 16px
 				transition: 0.3s border
 			&[data-opened="false"]
 				background-image: url('../img/elements/arrow-down.svg')
@@ -323,9 +326,9 @@ body
 				grid-column: 1/-1
 
 	&__actions
-		display: flex
-		justify-content: space-between
-		flex-wrap: wrap
+		display: grid
+		grid-template-columns: 1fr max-content
+		grid-gap: 20px
 	&__action
 		&-confirm
 			display: flex
